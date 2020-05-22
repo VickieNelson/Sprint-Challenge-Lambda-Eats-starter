@@ -1,11 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+import "./index.css";
 
-const App = () => {
+import Home from "./Components/Home";
+import Form from "./Components/Form";
+import { Route, Link, Switch } from "react-router-dom";
+
+export default function App() {
+  const [pizza, setPizza] = useState("");
+
   return (
-    <>
-      <h1>Lambda Eats</h1>
-      <p>You can remove this code and create your own header</p>
-    </>
+    <div className='App'>
+      <nav>
+        <div>
+          {" "}
+          <h1 className='store-header'>Lambda Eats</h1>
+        </div>
+        <div className='nav-links'>
+          <Link to='/'>Home</Link>
+
+          <Link to='/pizza'>Create Your Pizza!</Link>
+        </div>
+      </nav>
+
+      <Switch>
+        <Route path='/pizza'>
+          <Form pizza={pizza} />
+        </Route>
+
+        <Route path='/' component={Home} />
+      </Switch>
+    </div>
   );
-};
-export default App;
+}
