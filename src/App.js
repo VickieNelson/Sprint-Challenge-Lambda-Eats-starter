@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./index.css";
+
 import Home from "./Components/Home";
 import Form from "./Components/Form";
 import { Route, Link, Switch } from "react-router-dom";
@@ -9,10 +10,15 @@ export default function App() {
   return (
     <div className='App'>
       <nav>
-        <h1 className='store-header'>Lambda Eats</h1>
+        <div>
+          {" "}
+          <h1 className='store-header'>Lambda Eats</h1>
+        </div>
         <div className='nav-links'>
           <Link to='/'>Home</Link>
-          <Link to='/pizza'>Build Your Pizza!</Link>
+          <button className='pizza-btn'>
+            <Link to='/pizza'>Create Your Pizza!</Link>
+          </button>
         </div>
       </nav>
 

@@ -15,9 +15,6 @@ function Home(props) {
         src='https://www.monsterchildren.com/wp-content/uploads/2017/09/pizzanista-850x567.jpg'
         alt=''
       />
-      <button className='md-button pizza-button' onClick={routeToForm}>
-        Build Your Pizza!
-      </button>
     </div>
   );
 }
