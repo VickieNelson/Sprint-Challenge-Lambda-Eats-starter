@@ -7,6 +7,7 @@ import { Route, Link, Switch } from "react-router-dom";
 
 export default function App() {
   const [pizza, setPizza] = useState("");
+
   return (
     <div className='App'>
       <nav>
@@ -16,9 +17,8 @@ export default function App() {
         </div>
         <div className='nav-links'>
           <Link to='/'>Home</Link>
-          <button className='pizza-btn'>
-            <Link to='/pizza'>Create Your Pizza!</Link>
-          </button>
+
+          <Link to='/pizza'>Create Your Pizza!</Link>
         </div>
       </nav>
 

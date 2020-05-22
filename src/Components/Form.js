@@ -104,9 +104,9 @@ const Form = () => {
     <div className='pizzaForm'>
       <div className='form-heading'>
         <h2>Lambda Eats</h2>
-
         <h3>Create your pizza style!</h3>
       </div>
+
       <form className='form' onSubmit={formSubmit}>
         {/* //name */}
         <label htmlFor='name'>
