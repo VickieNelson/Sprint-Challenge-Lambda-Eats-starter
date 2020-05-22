@@ -1,7 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 
-function Form() {
-  return <></>;
+export default function Form() {
+  return <h2>Placeholder for form</h2>;
 }
-
-export default Form;

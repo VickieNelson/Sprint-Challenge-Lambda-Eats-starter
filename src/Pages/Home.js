@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 
-function Home() {
-  return <></>;
-}
-
-export default Home;
+export defaultfunction Home() {
+  return (
+      <h2>placeholder HOME</h2>
+      );
+};
