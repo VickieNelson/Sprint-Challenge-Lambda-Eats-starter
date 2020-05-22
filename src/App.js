@@ -1,34 +1,28 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import * as yup from "yup";
-// import formSchema from "../utils/formSchema";
+import React, { useState } from "react";
+import "./index.css";
+import Home from "./Components/Home";
+import Form from "./Components/Form";
+import { Route, Link, Switch } from "react-router-dom";
 
-import Home from "./Pages/Home";
-import Form from "./Pages/Form";
-import OrderComplete from "./Pages/OrderComplete";
-
-const App = () => {
-  const [order, setOrder] = useState([]);
+export default function App() {
+  const [pizza, setPizza] = useState("");
   return (
-    <>
-      {/* Headline */}
-      <h1>Lambda Eats</h1>
+    <div className='App'>
+      <nav>
+        <h1 className='store-header'>Lambda Eats</h1>
+        <div className='nav-links'>
+          <Link to='/'>Home</Link>
+          <Link to='/pizza'>Build Your Pizza!</Link>
+        </div>
+      </nav>
 
-      {/* home route */}
-      <Route exact path='/'>
-        <Home />
-      </Route>
+      <Switch>
+        <Route path='/pizza'>
+          <Form pizza={pizza} />
+        </Route>
 
-      {/* pizza route */}
-      <Route path='/pizza'>
-        <Form order={order} setOrder={setOrder} />
-      </Route>
-
-      {/* order route */}
-      <Route path='/order'>
-        <OrderComplete order={order} />
-      </Route>
-    </>
+        <Route path='/' component={Home} />
+      </Switch>
+    </div>
   );
-};
-export default App;
+}
