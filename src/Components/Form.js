@@ -13,7 +13,7 @@ export default function Form() {
         toppings: '',
         instructions: '',
 
-}
+};
 
 
 //pizza and post form useState
@@ -32,11 +32,19 @@ const formSchema = yup.object().shape({
     size: yup.string().required('Select size'),
     sauce: yup.string().required(),
     instructions: yup.string()
-})
+});
 
-//changes validation
+// validation for changes
 
+const validateChange = event =>{
 
+    yup
+
+    .reach(//a,b 2 arguments: the schema and the target)
+    .validate(//the target and value)
+    .then(//function?)
+    .catch(//function?)
+}
 
   return (<></>);
 
