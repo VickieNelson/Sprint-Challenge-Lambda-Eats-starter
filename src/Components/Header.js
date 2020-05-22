@@ -5,6 +5,11 @@ export default function Header(props) {
     const headerColor = {
         color: #F9F9F9;
         backgroundColor: #a9a9a9;
+
+        const pizzaOrder = (
+            width: 70%;
+            height: 500px;
+        )
     }
   return (
     <header className='header'>

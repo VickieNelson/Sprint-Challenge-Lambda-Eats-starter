@@ -1,7 +1,5 @@
 import React from "react";
 
-export defaultfunction Home() {
-  return (
-      <h2>placeholder HOME</h2>
-      );
-};
+export default function Home() {
+  return <h2>placeholder HOME</h2>;
+}
