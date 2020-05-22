@@ -8,9 +8,26 @@ import Form from "./Pages/Form";
 import OrderComplete from "./Pages/OrderComplete";
 
 const App = () => {
+  const [order, setOrder] = useState([]);
   return (
     <>
+      {/* Headline */}
       <h1>Lambda Eats</h1>
+
+      {/* home route */}
+      <Route exact path='/'>
+        <Home />
+      </Route>
+
+      {/* pizza route */}
+      <Route path='/pizza'>
+        <Form order={order} setOrder={setOrder} />
+      </Route>
+
+      {/* order route */}
+      <Route path='/order'>
+        <OrderComplete order={order} />
+      </Route>
     </>
   );
 };
