@@ -32,7 +32,7 @@ const formSchema = yup.object().shape({
     size: yup.string().required('Select size'),
     sauce: yup.string().required(),
     instructions: yup.string()
-});
+})
 
 // validation for changes
 
@@ -40,10 +40,31 @@ const validateChange = event =>{
 
     yup
 
-    .reach(//a,b 2 arguments: the schema and the target)
-    .validate(//the target and value)
-    .then(//function?)
-    .catch(//function?)
+    .reach //a,b 2 arguments: the schema and the target
+        (formSchema, event.target.name)
+    .validate //the target and value
+        (event.target.value)
+    .then //function?
+    (valid =>{
+        setErrors({...errors, [event.target.name]: ''});
+    })
+    .catch //function?
+    (err => {
+        setErrors({...errors, [event.target.name]: errors.errors[0]});
+});
+}
+
+//change handler
+const handleChange = event =>{
+    event.persist();
+    const newPizzaForm = {
+        ...pizzaForm, [event.target.name] :
+        event.target.type === 'checkbox' ? event.target.checked:
+        event.target.type === 'radio' ?event.target.checked:
+        event.target.value
+    };
+    validateChange(event);
+    setPizzaForm(newPizzaForm);
 }
 
   return (<></>);
